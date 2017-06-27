@@ -6,11 +6,11 @@ class Product < ApplicationRecord
   validates_attachment :image, presence: true, content_type: {content_type: ["image/png", "image/jpeg"]}
   validates :description, length: {maximum: 255}, presence: true
   validates :price, presence: true
-  validates :user_id, presence: true
+  # validates :user_id, presence: true
   validates :category_id, presence: true
 
 
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   belongs_to :category
 
   default_scope -> {order('created_at DESC')}
