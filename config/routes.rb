@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
-  get 'product/show'
+  root "static_pages#home"
 
-  get 'product/new'
 
-  get 'product/create'
+  get "/about", to: "static_pages#about"
+  get "/new", to: "products#new"
+  post "new", to: "products#create"
+  delete "delete", to: "products#destroy"
+  get "/edit", to: "products#edit"
+  post "edit", to: "products#update"
 
-  get 'product/edit'
-
-  get 'product/update'
-
-  get 'product/destroy'
-
-  get 'static_pages/home'
-
-  get 'static_pages/about'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :addresses
-  resources :categories
-  resources :products
+
+    resources :addresses
+    resources :categories
+    resources :products
+  
+
 end
