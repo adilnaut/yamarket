@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   validates :category_id, presence: true
 
 
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   belongs_to :category
 
   default_scope -> {order('created_at DESC')}
