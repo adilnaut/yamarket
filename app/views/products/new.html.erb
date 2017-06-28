@@ -12,5 +12,7 @@
   Price<%= f.number_field :price %>
   Discount<%= f.text_field :discount %>
   Image<%= f.file_field :image %>
+  <!-- <% categories_array = Category.all.map { |category| [category.title] } %>
+  <%= options_for_select(categories_array) %> -->
   <%= f.submit "Add product" %>
 <% end %>

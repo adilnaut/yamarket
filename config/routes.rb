@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'category/create'
+
+  get 'category/destroy'
+
+  get 'category/show'
+
   root "static_pages#home"
 
 
@@ -8,7 +14,8 @@ Rails.application.routes.draw do
   delete "delete", to: "products#destroy"
   get "/edit", to: "products#edit"
   post "edit", to: "products#update"
-
+  get "/categories/new", to: "categories#new"
+  post "/categories/new", to: "categories#create"
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -16,6 +23,6 @@ Rails.application.routes.draw do
     resources :addresses
     resources :categories
     resources :products
-  
+
 
 end
