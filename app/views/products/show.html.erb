@@ -2,5 +2,6 @@
 <% image_tag @product.image(:large) %>
 
 <h3>
+  <%= Category.find_by_id(@product.category_id).title %>
   <%= @product.description %>
 </h3>

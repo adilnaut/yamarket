@@ -12,7 +12,12 @@
   Price<%= f.number_field :price %>
   Discount<%= f.text_field :discount %>
   Image<%= f.file_field :image %>
-  <!-- <% categories_array = Category.all.map { |category| [category.title] } %>
-  <%= options_for_select(categories_array) %> -->
+  Category
+  <!-- <% categories_array = []%>
+  <% Category.all.each do |x| %>
+    <% categories_array.push(x.title)%>
+  <% end %>
+  <%= f.select(:category_id, options_for_select(categories_array)) %> -->
+   <%= f.select :category_id, Category.all.collect { |c| [ c.title, c.id ] }%>
   <%= f.submit "Add product" %>
 <% end %>
