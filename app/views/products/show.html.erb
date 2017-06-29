@@ -1,7 +1,19 @@
 
 <% image_tag @product.image(:large) %>
-
+<%= Category.find_by_id(@product.category_id).title %>
+<div class="row projects-holder">
+    <div class="col-md-4 col-sm-6" >
+        
+        <div class="project-item">
+            <%= image_tag @product.image(:thumbnail), class: "img"%>
+            <%= @product.title %>
+            <div class="project-desc"> <%= @product.price %></div>
+                
+        </div>
+        
+    </div>
+</div>
 <h3>
-  <%= Category.find_by_id(@product.category_id).title %>
-  <%= @product.description %>
+  
+  
 </h3>
