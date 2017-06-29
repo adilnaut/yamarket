@@ -2,7 +2,10 @@
   <h2> Categories: </h2>
   <ul>
     <% @categories.each do |x|%>
-    <li> <h3> <%= x.title %> </h3> </li>
+
+    <li> <h3> <%= x.title %> </h3>
+    <%= link_to 'Delete',x, method: :delete %> </li>
     <% end %>
   </ul>
+  <%= link_to 'Create category', categories_new_path %>
 </div>

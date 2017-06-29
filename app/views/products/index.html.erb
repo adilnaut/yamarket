@@ -1,0 +1,11 @@
+<div class="col-md-6 col-md-offset-3">
+  <% @products.each do |product|%>
+      <h3><%= product.title%>
+      </h3>
+    <%= image_tag product.image(:thumbnail), class: "img"%>
+    <h3>   price: <%= product.price%> $  </h3>
+    <h4><%= link_to 'Delete',product, method: :delete %> </h4>
+    <hr>
+  <% end %>
+  <h4> <%= link_to 'Create product', new_path %> </h4>
+</div>

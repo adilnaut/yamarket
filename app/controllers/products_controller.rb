@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
+  
 
   before_action :set_product, only: [:show, :destroy, :edit, :update]
-
+  def index
+    @products = Product.all
+    @order_item = current_order.order_items.new
+  end
   def show
   end
 
@@ -33,7 +37,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to root_path
+    redirect_to products_path
   end
 
   private
