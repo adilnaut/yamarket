@@ -39,6 +39,17 @@
       <% end %>
     </p>
 
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1><%= link_to "My Store", root_path %></h1>
+        </div>
+        <div class="col-md-6 text-right">
+          <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+        </div>
+      </div>
+      <hr>
+      <%= yield %>
+    </div>
   </body>
 </html>

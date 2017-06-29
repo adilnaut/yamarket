@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170629044842) do
 
   create_table "products", force: :cascade do |t|
     t.integer  "category_id"
+    t.integer  "user_id"
     t.string   "title"
     t.string   "description"
     t.integer  "price"
@@ -72,7 +73,6 @@ ActiveRecord::Schema.define(version: 20170629044842) do
     t.string   "size"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
-    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
