@@ -2,14 +2,14 @@
             <div class="top-section">
                 <h1 class="logo"><%= link_to "Geeking", root_path %> </h1>
                 <!--<div class="profile-image">
-                    <img src="img/profile.jpg" alt="Volton"> 
-                </div> 
-                
+                    <img src="img/profile.jpg" alt="Volton">
+                </div>
+
                 <h3 class="profile-title">Volton</h3>
                 <p class="profile-description">Digital Photography</p>!-->
                     <p class="navbar-text center">
                       <% if user_signed_in? %>
-                        <strong><%= current_user.name %></strong>.
+                        <strong><%= current_user.name %></strong>
                         <br>
                         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
                         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
@@ -21,12 +21,7 @@
                 <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
             </div> <!-- top-section -->
             <div class="main-navigation">
-                <ul class="navigation">
-                    <li><a href="#top" class="bar-categories">category</a></li>
-                    <li><a href="#about" class="bar-categories">category1</a></li>
-                    <li><a href="#projects" class="bar-categories">category2</a></li>
-                    <li><a href="#contact" class="bar-categories">category3</a></li>
-                </ul>
+
             </div> <!-- .main-navigation -->
             <div class="social-icons">
                 <ul>

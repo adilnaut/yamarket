@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20170629044842) do
     t.string   "lastname"
     t.string   "phone"
     t.boolean  "admin",                  default: false
-    t.         "gender"
+    t.boolean  "gender"
     t.integer  "age"
     t.integer  "user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
